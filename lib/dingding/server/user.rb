@@ -41,7 +41,7 @@ module Dingding
     #  get user info by user_id
     def fetch_user_by_user_id(user_id)
       @token ||= fetch_access_token
-      uri = URI(INTERFACE_URL + '/user/get?' + 'access_token=' + @token + '&code=' + user_id.to_s)
+      uri = URI(INTERFACE_URL + '/user/get?' + 'access_token=' + @token + '&userid=' + user_id.to_s)
       response = Net::HTTP.get(uri)
       result = JSON.parse(response)
       UserInfo.new result
