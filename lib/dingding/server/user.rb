@@ -83,13 +83,14 @@ module Dingding
 
   class UserInfo
 
-    attr_reader :name, :userid
+    attr_reader :name, :userid, :email
 
     # 构造
     # 钉钉返回的单个用户数据
     def initialize(data)
       @name = data['name']
       @userid = data['userid']
+      @email = data['email']
     end
   end
 end
